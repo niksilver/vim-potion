@@ -39,6 +39,7 @@ syntax match potionNumber "\v[-+]?[0-9]+(\.[0-9]*)?e[-+]?[0-9]+(\.[0-9]*)?"
 syntax match potionNumber "\v0x[0-9a-fA-F]+"
 
 syntax region potionString start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax region potionString start=/\v'/ skip=/\v''/ end=/\v'/
 
 highlight link potionComment Comment
 highlight link potionKeyword Keyword
