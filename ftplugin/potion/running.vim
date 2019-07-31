@@ -19,22 +19,14 @@ function! PotionShowBytecode()
     " Open a new split, or reuse the old one
 
     let window_num = bufwinnr('__Potion_Bytecode__')
-    echom "Target is window " . window_num
     if window_num == -1
         vsplit __Potion_Bytecode__
     else
-        let current_window = bufwinnr('%')
-        echom "Starting in window " . current_window
-        echom "Switching to window " . window_num
         execute 'normal! :' . window_num . "wincmd w\<cr>"
-        let current_window = bufwinnr('%')
-        echom "Now in window " . current_window
     endif
 
     " Prepare the split
 
-    let current_window = bufwinnr('%')
-    echom "Working in window " . current_window
     normal! ggdG
     setlocal filetype=potionbytecode
     setlocal buftype=nofile
