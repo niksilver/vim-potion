@@ -5,5 +5,110 @@
                          ___/ (   | |   | (   | |   |  ~
                         _|   \___/ \__|_|\___/ _|  _|  ~
 
-        Functionality for teh Potion programming language.
+        Functionality for the Potion programming language.
      Includes syntax highlighting, code folding, and more!
+
+-----------------------------------------------------------------------------
+CONTENTS                                                    *PotionContents*
+
+    1. Usage ................... |PotionUsage|
+    2. Mappings ................ |PotionMappings|
+    3. Licence ................. |PotionLicence|
+    4. Bugs and contributing.... |PotionContributing|
+    5. Changelog ............... |PotionChangelog|
+    6. Credits ................. |PotionCredits|
+
+-----------------------------------------------------------------------------
+POTION USAGE                                                   *PotionUsage*
+
+without you needing to do anything this plugin has syntax highlighting
+for the Potion language. However, there are a number extra features you
+might like to use, all of which have their own mappings: code folding,
+jumping back and forth across code sections, compile-and-run, and
+byte code generation and viewing.
+
+-----------------------------------------------------------------------------
+POTION MAPPINGS                                             *PotionMappings*
+
+Code folding                                             *PotionCodeFolding*
+
+Code folding allows you collapse and open sections of code. The plugin
+doesn't define any key mappings itself. So as a reminder, here some
+you'll mainly use, unless you or someone else has redefined them.
+
+zR      Open all folds.
+
+zM      Close all folds.
+
+zo      Open the one fold under the cursor.
+
+zO      Open all folds under the cursor, recursively.
+
+zc      Close the one fold under the cursor.
+
+zC      Close all folders under the cursor, recursively.
+
+Section movement                                     *PotionSectionMovement*
+
+You can jump forward and backward to the next/previous section of code.
+There are two ways we define the start of "a section of code":
+
+Paragraph style     Formally, any line following a blank line that
+                    contains non-whitespace as the first character,
+                    or the first line in the file. Informally, this
+                    about sections separated by blanks.
+
+Block style         Formally, any line that contains non-whitespace as the
+                    first character, an equal sign somewhere inside the
+                    line, and ends with a colon. Informally, this
+                    is about blocks defined at the top level.
+
+With that in mind, here are the key mappings:
+
+]]      Forward to the start of the next section, paragraph style.
+
+[[      Backward to the start of the next section, paragraph style.
+
+][      Forward to the start of the next section, block style.
+
+[]      Backward to the start of the next section, block style.
+
+These mappings can also be used with operators. E.g. "d]]" will
+delete to the start of next paragraph-style section.
+
+Run code and viewing bytecode                               *PotionRunning*
+
+<localleader>r      Compile and run the current file.
+
+<localleader>b      Generate and view the bytecode in its own buffer..
+
+-----------------------------------------------------------------------------
+LICENCE                                                      *PotionLicence*
+
+The code in this plugin is from Steve Losh's "Learn Vimscript the Hard Way"
+other than minor tweaks, and is reproduced under that licence.  See the
+book at http://learnvimscriptthehardway.stevelosh.com/ and the licence for
+that book and the code at
+http://learnvimscriptthehardway.stevelosh.com/license.html
+
+-----------------------------------------------------------------------------
+BUGS AND CONTRIBUTING                                   *PotionContributing*
+
+I'm not actively maintaining this, so please don't report any bugs or
+offer to contribute. Sorry.
+
+-----------------------------------------------------------------------------
+CHANGELOG                                                  *PotionChangelog*
+
+Versions:
+
+1.0     This release, the first one. And probably the last.
+
+-----------------------------------------------------------------------------
+CREDITS                                                      *PotionCredits*
+
+All of this was produced following Steve Losh's "Learn Vimscript the
+Hard Way", so all credit goes to him.
+
+
+ vim:textwidth=78:tabstop=4:filetype=help:
